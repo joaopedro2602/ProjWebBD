@@ -51,8 +51,10 @@ class Banco{
             $i = 0;
             foreach ($lista as $l){
                 $f_lista[$i]['id'] = $l['id'];
+                $f_lista[$i]['senha'] = $l['senha'];
                 $f_lista[$i]['email'] = $l['email'];
                 $f_lista[$i]['endereco'] = $l['endereco'];
+                $f_lista[$i]['bairro'] = $l['bairro'];
                 $f_lista[$i]['cep'] = $l['cep'];
                 $f_lista[$i]['cidade'] = $l['cidade'];
                 $i++;
@@ -70,7 +72,7 @@ class Banco{
     $cidade, 
     $estado*/
     public function updateAgendamentos($id,$email,$senha,$endereco,$bairro,$cep,$cidade,$estado){
-        $stmt = $this->mysqli->query("UPDATE agendamentos SET `email` = '". $email . "', `endereco` = '". $endereco . "', `cep` = '". $cep ."', `cidade` = '". $cidade . "' WHERE `agendamentos`.`id` = " . $id . ";");
+        $stmt = $this->mysqli->query("UPDATE agendamentos SET `email` = '". $email ."', `senha` = '". $senha .  "', `endereco` = '". $endereco . "', `bairro` = '". $bairro .  "', `cep` = '". $cep ."', `cidade` = '". $cidade . "', `estado` = '". $estado .  "' WHERE `agendamentos`.`id` = " . $id . ";");
         if($stmt > 0){
             return true;
         }else{

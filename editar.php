@@ -58,7 +58,7 @@ require_once("controller/ControllerCadastro.php")
                 <!--As a heading-->
                 <nav class="navbar bg-light">
                     <div class="container-fluid">
-                        <span class="navbar-brand">Cadastro de Usuários</spam>
+                        <span class="navbar-brand">Edição de Credenciais</spam>
                     </div>
                 </nav>
             </div>
@@ -71,34 +71,80 @@ require_once("controller/ControllerCadastro.php")
                 &nbsp;
             </div>
             <div class="row">
-                <div class="card mb-3 col-12">
-                    <div class="card-body">
-                        <h5 class="card-title">Editar - agendamentos de potenciais Clientes</h5>
-                        <p class="card-text">Sistema utilizado para agendamentos de serviços.</p>
-                        <p>
+            <div class="col">
+                        
                             <?php
                                 $controller = new ControllerCadastro();
                                 $resultado = $controller -> listar($_GET['id']);
                             ?>
                             <form method="post" action="controller/ControllerCadastro.php?funcao=editar&id=<?php echo $resultado[0]['id']; ?>" id="form" name="form">
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Email:</label>
-                                    <input type="text" class="form-control" name="txtEmail" required id="txtEmail" value="<?php echo $resultado[0]['email'];?>">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Endereço:</label>
-                                    <input type="text" class="form-control" name="txtEndereco" required id="txtEndereco" value="<?php echo $resultado[0]['endereco'];?>">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">CEP:</label>
-                                    <input type="text" class="form-control" name="txtCep" required id="txtCep" value="<?php echo $resultado[0]['cep'];?>">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Cidade:</label>
-                                    <input type="text" class="form-control" name="txtCidade" required id="txtCidade" value="<?php echo $resultado[0]['cidade'];?>">
-                                </div>
-                                <button type="submit" id="btnInserir" class="btn btn-primary">Editar</button>
-</form>
+ 
+                    <div class="row g-3">
+                    <div class="col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input type="email" class="form-control" require id="txtEmail" name="txtEmail" value="<?php echo $resultado[0]['email'];?>">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Senha</label>
+                        <input type="text" class="form-control" require id="txtSenha" name="txtSenha" value="<?php echo $resultado[0]['senha'];?>">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" value="<?php echo $resultado[0]['endereco'];?>">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Bairro</label>
+                        <input type="text" class="form-control" id="txtBairro" name="txtBairro" value="<?php echo $resultado[0]['bairro'];?>">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Cep</label>
+                        <input type="text" class="form-control" required id="txtCep" name="txtCep" value="<?php echo $resultado[0]['cep'];?>">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Cidade</label>
+                        <input type="text" class="form-control" id="txtCidade" name="txtCidade" value="<?php echo $resultado[0]['cidade'];?>">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Estado</label>
+                        <select id="cboEstado" class="form-select" name="cboEstado">
+                            <option selected>Escolha</option>
+                            <option> AC </option>
+                            <option> AL </option>
+                            <option> AP </option>
+                            <option> AM </option>
+                            <option> BA </option>
+                            <option> CE </option>
+                            <option> ES </option>
+                            <option> GO </option>
+                            <option> MA </option>
+                            <option> MT </option>
+                            <option> MS </option>
+                            <option> MG </option>
+                            <option> PA </option>
+                            <option> PB </option>
+                            <option> PE </option>
+                            <option> PI </option>
+                            <option> RJ </option>
+                            <option> RN </option>
+                            <option> RS </option>
+                            <option> RO </option>
+                            <option> RR </option>
+                            <option> SC </option>
+                            <option> SP </option>
+                            <option> SE </option>
+                            <option> TO </option>
+                            <option> DF </option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-dark">Editar</button>
+                    </div>
+                </div>
+
+
+
+
+
 </p>
 </div>
 </div>

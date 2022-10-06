@@ -58,7 +58,7 @@ require_once("controller/ControllerCadastro.php")
                 <!--As a heading-->
                 <nav class="navbar bg-light">
                     <div class="container-fluid">
-                        <span class="navbar-brand">Cadastro de Usuários</spam>
+                        <span class="navbar-brand">Consulta de Usuários</spam>
                     </div>
                 </nav>
             </div>

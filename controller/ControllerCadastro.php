@@ -36,12 +36,12 @@ class ControllerCadastro{
     private function editar($id){
         $this->cadastro->setId($id);
         $this->cadastro->setEmail($_POST['txtEmail']);
-        //$this->cadastro->setSenha($_POST['txtSenha']);
+        $this->cadastro->setSenha($_POST['txtSenha']);
         $this->cadastro->setEndereco($_POST['txtEndereco']);
-        //$this->cadastro->setBairro($_POST['txtBairro']);
+        $this->cadastro->setBairro($_POST['txtBairro']);
         $this->cadastro->setCep($_POST['txtCep']);
         $this->cadastro->setCidade($_POST['txtCidade']);
-        //$this->cadastro->setEstado($_POST['cboEstado']);
+        $this->cadastro->setEstado($_POST['cboEstado']);
         $result = $this->cadastro->editar();
         if($result >= 1){
             echo "<script>alert('Registro alterado com sucesso!');document.location='../consulta.php'</script>";
